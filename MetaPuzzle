@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Final Puzzle Entry</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    #finalPoem { display: none; margin-top: 20px; }
+    #warning { color: red; display: none; }
+  </style>
+  <script>
+    function checkAnswer() {
+      var answer = document.getElementById("metaAnswer").value;
+      // Normalize the input by trimming and making it lowercase
+      if(answer.trim().toLowerCase() === "mother of 4") {
+        document.getElementById("finalPoem").style.display = "block";
+        document.getElementById("warning").style.display = "none";
+      } else {
+        document.getElementById("warning").style.display = "block";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Enter the Meta Puzzle Answer</h2>
+  <p>Type the secret phrase, then click "Submit" to reveal your final poem.</p>
+  <input type="text" id="metaAnswer" placeholder="Enter answer here">
+  <button onclick="checkAnswer()">Submit</button>
+  <p id="warning">That's not quite right—try again!</p>
+
+  <div id="finalPoem">
+    <h3>Your Final Poem:</h3>
+    <p>
+      And now for the final thrill—<br>
+      Your fourth championship ring, mailed with skill.<br>
+      Chelsea, you rock the ring of life,<br>
+      A trophy for conquering both love and strife!
+    </p>
+  </div>
+</body>
+</html>
